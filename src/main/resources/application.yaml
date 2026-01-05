@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  GenAiTester:
+    build: .
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    depends_on:
+      - target-microservice
+
+  target-microservice:
+    image: my-target-microservice:latest
+    ports:
+      - "8081:8081"
