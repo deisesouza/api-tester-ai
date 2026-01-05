@@ -1,8 +1,8 @@
 # api-tester-ai
 
-<h3 align="center">
+<h4 align="center">
   API de Engenharia de Prompt que utiliza IA Generativa (Azure OpenAI) para validar outros microserviços.
-</h3>
+</h4>
 
 ## Tecnologias
 
@@ -17,12 +17,12 @@
 ```
 $ docker-compose up
 ```
-
 - Construir o projeto:
 ```
-$ ./mvnw clean package
+$ ./gradlew clean build
 ```
 - Executar a aplicação:
 ```
-$ java -jar target/api-tester-ai-0.0.1-SNAPSHOT.jar
+$ "java", "-jar", "app.jar"
+
 ```

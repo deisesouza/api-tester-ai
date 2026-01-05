@@ -1,15 +1,26 @@
 version: '3.8'
+
 services:
-  GenAiTester:
+  gen-ai-tester:
     build: .
+    container_name: api-tester-ai
     ports:
       - "8080:8080"
     env_file:
       - .env
     depends_on:
       - target-microservice
+    networks:
+      - app-network
 
   target-microservice:
-    image: my-target-microservice:latest
+    image: api-tester-ai:latest
+    container_name: target-microservice
     ports:
       - "8081:8081"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
